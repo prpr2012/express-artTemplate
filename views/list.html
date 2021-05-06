@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>列表页</title>
+  </head>
+  <body>
+    <div>我是列表页</div>
+    {{each list}}
+    <li onclick="toDetail(`{{$value.id}}`)">
+      {{ $index + 1 }} ---- {{ $value.publisher }} ---- {{ $value.title }}
+    </li>
+    {{/each}}
+  </body>
+  <script>
+      function toDetail(id){
+         window.open('/detail/'+id)
+      }
+  </script>
+</html>
